@@ -1,0 +1,29 @@
+{% if not errors %}
+<div class="center-flex-container">
+  <div class="left-box">
+      Ron:
+  </div>
+  <div class="right-box">
+    {{ron|default:"1000"}}
+  </div>
+</div>
+<div class="center-flex-container">
+  <div class="left-box">
+      Tsumo:
+  </div>
+  <div class="right-box">
+    {{tsumo|default:"500/300"}}
+  </div>
+</div>
+{% if special_name %}
+<div class="center-flex-container">
+  <h4>{{special_name}}</h4>
+</div>
+{% endif %}
+{% else %}
+<div class="flex-container">
+  {% for error in errors.values %}
+  <p>Invalid values</p>
+  {% endfor %}
+</div>
+{% endif %}

@@ -1,0 +1,47 @@
+{% extends "components/base.html" %}
+{% load static %}
+
+{% block scripts %}
+<script src="{% static 'js/htmx.min.js' %}"></script>
+<script src="{% static "js/calculator_fields.js" %}"></script>
+{% endblock scripts %}
+
+{% block extrahead %}
+<meta name="csrf-token" content="{{ csrf_token }}">
+{% endblock extrahead %}
+
+
+{% block content %}
+<section class="short-section">
+  <div class="flex-container">
+    <label for="hanValue" class="form-label">Han</label>
+    <button type="button" id="decreaseHanValue">-</button>
+    <input type="text" id="hanValue" class="input-value" value="1" name="han" hx-include="{{attrs}}" hx-trigger="change" hx-post="{% url 'calculate_view' %}" hx-target="#result" hx-swap="innerHTML">
+    <button type="button" id="increaseHanValue">+</button>
+  </div>
+  <div class="flex-container">
+    <label for="fuValue" class="form-label">Fu</label>
+    <button type="button" id="decreaseFuValue">-</button>
+    <input type="text" id="fuValue" class="input-value" value="30" name="fu" hx-include="{{attrs}}" hx-trigger="change" hx-post="{% url 'calculate_view' %}" hx-target="#result" hx-swap="innerHTML">
+    <button type="button" id="increaseFuValue">+</button>
+  </div>
+  <div class="flex-container">
+    <label for="honbaValue" class="form-label">Honba</label>
+    <button type="button" id="decreaseHonbaValue">-</button>
+    <input type="text" id="honbaValue" class="input-value" value="0" name="honba" hx-include="{{attrs}}" hx-trigger="change" hx-post="{% url 'calculate_view' %}" hx-target="#result" hx-swap="innerHTML">
+    <button type="button" id="increaseHonbaValue">+</button>
+  </div>
+  <hr>
+  <div class="flex-container">
+    <input type="checkbox" id="dealer_id" class="checkbox-button" name="is_dealer" hx-include="{{attrs}}" hx-trigger="click" hx-post="{% url 'calculate_view' %}" hx-target="#result" hx-swap="innerHTML"/>
+    <label for="dealer_id" class="checkbox-button-label">Dealer</label>
+    <input type="checkbox" id="kiriage_id" class="checkbox-button" name="kiriage" hx-include="{{attrs}}" hx-trigger="click" hx-post="{% url 'calculate_view' %}" hx-target="#result" hx-swap="innerHTML"/>
+    <label for="kiriage_id" class="checkbox-button-label">Kiriage Mangan</label>
+  </div>
+</section>
+<section class="short-section center-container">
+  <div id="result">
+    {% include "score_calculator/_score_div.html" %}
+  </div>
+</section>
+{% endblock %}

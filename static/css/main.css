@@ -1,0 +1,92 @@
+.sticky-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* background-color: #137ce4; */
+    padding: 10px 0;
+  }
+
+.nav-link {
+    margin-right: 20px
+}
+
+nav {
+    margin-top: 10px;
+}
+
+.input-value {
+    border: 1px solid #ddd;
+    text-align: center;
+    max-width: 6ch;
+    flex-grow: 1;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex > * {
+    /* outline: 2px solid #ddd; */
+    flex-shrink: 1;
+    flex-grow: 0;
+}
+
+.form-label{
+    padding: 10px;
+    width: 6ch;
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
+    margin: 20px;
+}
+
+/* Hide the actual checkbox */
+.checkbox-button {
+    display: none;
+}
+
+/* Style for the label */
+.checkbox-button-label {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid transparent; /* Border, optional */
+    border-radius: 5px; /* Rounded corners for the button */
+    cursor: pointer;
+    border-color: #ddd;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+    font-size: 1rem;
+}
+
+/* Change styles when the checkbox is checked */
+.checkbox-button:checked + .checkbox-button-label {
+    background-color: var(--accent); /* Activated background color */
+    color: #333; /* Activated text color */
+    border-color: var(--accent); /* Optional: change border color */
+}
+
+.short-section {
+    margin: 20px;
+}
+
+.center-flex-container {
+    display: flex;
+    justify-content: center; /* Positions the child elements at the far ends */
+    width: 100%; /* Adjust width as necessary */
+}
+
+.left-box {
+    text-align: right; /* Aligns the text to the right for the left box */
+    margin-right: 10px; /* Adds a margin to the right of the text */
+}
+
+.right-box {
+    text-align: left; /* Aligns the text to the left for the right box */
+}
