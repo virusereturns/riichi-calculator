@@ -1,5 +1,6 @@
 from rest_framework import serializers
 
+
 class ScoreInputSerializer(serializers.Serializer):
     han = serializers.IntegerField()
     fu = serializers.IntegerField()

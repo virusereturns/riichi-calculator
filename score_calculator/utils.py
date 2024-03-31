@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def calculate_score(han: int, fu: int, is_dealer=False, kiriage=False, honba=0) -> dict:
     if fu > 20 and fu < 25:
         fu = 25
@@ -31,7 +32,7 @@ def calculate_score(han: int, fu: int, is_dealer=False, kiriage=False, honba=0) 
         'honba': honba,
         'dealer': is_dealer,
         'kiriage': kiriage,
-        'special_name': special_name if special_name else None
+        'special_name': special_name if special_name else None,
     }
     if is_dealer:
         ron = np.ceil(base_score * 6 / 100) * 100 + honba * 300

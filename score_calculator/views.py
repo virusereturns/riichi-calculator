@@ -23,6 +23,7 @@ class ScoreCalcAPI(APIView):
         else:
             return Response(serializer.errors, status=400)
 
+
 class ScoreCalcHTMXView(TemplateView):
     template_name = 'score_calculator/_score_div.html'
 
