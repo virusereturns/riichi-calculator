@@ -1,6 +1,7 @@
 asgiref==3.8.1
 Brotli==1.1.0
 click==8.1.7
+dj-database-url==2.1.0
 Django==4.2
 djangorestframework==3.15.1
 gunicorn==21.2.0
@@ -8,10 +9,12 @@ h11==0.14.0
 numpy==1.26.4
 packaging==24.0
 pandas==2.2.1
+psycopg2-binary==2.9.9
 python-dateutil==2.9.0.post0
 pytz==2024.1
 six==1.16.0
 sqlparse==0.4.4
+typing_extensions==4.11.0
 tzdata==2024.1
 uvicorn==0.29.0
 whitenoise==6.6.0
