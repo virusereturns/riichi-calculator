@@ -82,7 +82,7 @@ else:
     DATABASES = {
         'default': dj_database_url.config(
             # Replace this value with your local database's connection string.
-            default='postgresql://postgres:postgres@localhost:5432/riichi_calculator',
+            default='postgres://riichi_calculator_db_user:hWlNUgktJ2l0EcY0pAm7lQGDbnL4e3nI@dpg-co8oc47109ks73ei7a60-a.oregon-postgres.render.com/riichi_calculator_db',
             conn_max_age=600
         )
     }

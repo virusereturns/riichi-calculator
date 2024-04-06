@@ -1,8 +1,8 @@
 databases:
-  - name: riichi_calculator_db
+  - name: riichi-calculator-db
     plan: free
-    databaseName: calculator_db
-    user: calculator_user
+    databaseName: riichi_calculator_db
+    user: riichi_calculator_db_user
 
 services:
   - type: web
@@ -14,7 +14,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: riichi_calculator_db
+          name: riichi-calculator-db
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
