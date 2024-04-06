@@ -1,3 +1,9 @@
+databases:
+  - name: riichi_calculator_db
+    plan: free
+    databaseName: calculator_db
+    user: calculator_user
+
 services:
   - type: web
     plan: free
@@ -6,6 +12,10 @@ services:
     buildCommand: "./build.sh"
     startCommand: "python -m gunicorn mysite.asgi:riichi_calculator -k uvicorn.workers.UvicornWorker"
     envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: riichi_calculator_db
+          property: connectionString
       - key: SECRET_KEY
         generateValue: true
       - key: WEB_CONCURRENCY
