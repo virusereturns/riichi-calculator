@@ -2,7 +2,7 @@ import numpy as np
 
 
 def calculate_score(han: int, fu: int, is_dealer=False, kiriage=False, honba=0) -> dict:
-    if fu > 20 and fu < 25:
+    if fu > 20 and fu <= 25:
         fu = 25
     elif fu % 10 != 0:
         fu = fu + (10 - fu % 10)
